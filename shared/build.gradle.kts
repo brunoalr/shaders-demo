@@ -2,10 +2,11 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 kotlin {
-    android()
+    androidTarget()
 
     jvm("desktop")
 
@@ -22,9 +23,9 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                api("androidx.activity:activity-compose:1.7.1")
-                api("androidx.appcompat:appcompat:1.6.1")
-                api("androidx.core:core-ktx:1.10.1")
+                api("androidx.activity:activity-compose:1.10.1")
+                api("androidx.appcompat:appcompat:1.7.0")
+                api("androidx.core:core-ktx:1.15.0")
             }
         }
         val desktopMain by getting {
@@ -48,10 +49,10 @@ android {
         targetSdk = (findProperty("android.targetSdk") as String).toInt()
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     kotlin {
-        jvmToolchain(11)
+        jvmToolchain(21)
     }
 }

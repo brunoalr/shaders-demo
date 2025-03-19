@@ -2,6 +2,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.Send
 import androidx.compose.material.icons.outlined.Send
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -79,7 +80,7 @@ fun App() {
                             shape = RectangleShape,
                             colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.White),
                             leadingIcon = {
-                                Icon(Icons.Outlined.Send, "Email icon", tint = Color.Gray)
+                                Icon(Icons.AutoMirrored.Outlined.Send, "Email icon", tint = Color.Gray)
                             },
                             placeholder = {
                                 Text(
@@ -106,12 +107,12 @@ fun App() {
                         ShaderChoiceButton(chosenShader, fontFamily, ShaderOptions.PLANET)
                     }
                 }
-                Icon(
-                    painterResource("github.png"),
-                    "Main icon",
-                    Modifier.fillMaxHeight().weight(6.5f).background(Color.Transparent).padding(iconPadding),
-                    tint = chosenShader.value.toIconColor()
-                )
+//                Icon(
+//                    painterResource("github.png"),
+//                    "Main icon",
+//                    Modifier.fillMaxHeight().weight(6.5f).background(Color.Transparent).padding(iconPadding),
+//                    tint = chosenShader.value.toIconColor()
+//                )
             }
         }
     }
